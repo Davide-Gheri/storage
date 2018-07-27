@@ -1,6 +1,5 @@
 import {  AdapterInterface } from './lib/AdapterInterface';
-import { Cookiestorage, Localstorage, Sessionstorage } from './lib/Adapters';
-import { ObjectStorage } from './lib/Adapters/ObjectStorage';
+import { Cookiestorage, Localstorage, Sessionstorage, ObjectStorage } from './lib/Adapters';
 
 interface StorageOptions {
     adapter: string

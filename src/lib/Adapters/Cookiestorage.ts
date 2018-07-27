@@ -19,7 +19,7 @@ export class Cookiestorage implements AdapterInterface {
         return attributes;
     }
 
-    public get(key?: string, def?: any): any {
+    get(key: string, def: any = null): any {
         let jar = {};
         const cookies = document.cookie ? document.cookie.split('; ') : [];
         let i = 0;
