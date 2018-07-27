@@ -17,7 +17,7 @@ function getCookie(cname) {
             return c.substring(name.length, c.length);
         }
     }
-    return "";
+    return null;
 }
 
 describe('Storage with Cookiestorage', function () {
@@ -53,5 +53,20 @@ describe('Storage with Cookiestorage', function () {
         const res = sInstance.get('__test__');
         expect(typeof res).toBe('object');
         expect(res).toEqual(obj);
-    })
+    });
+
+    it('should delete a value from cookie', function () {
+        document.cookie = '__test__=' + string;
+        const res = sInstance.delete('__test__');
+        expect(res).toBeTruthy();
+        expect(getCookie('__test__')).toBeNull();
+    });
+
+    it('should clear the cookie', function () {
+        document.cookie = '__test__=' + string;
+        document.cookie = '__test2__=' + string;
+        sInstance.clear();
+        expect(getCookie('__test__')).toBeNull();
+        expect(getCookie('__test2__')).toBeNull();
+    });
 });

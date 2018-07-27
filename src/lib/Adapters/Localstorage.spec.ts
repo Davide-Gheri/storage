@@ -37,5 +37,20 @@ describe('Storage with Localstorage', function () {
         const res = sInstance.get('__test__');
         expect(typeof res).toBe('object');
         expect(res).toEqual(obj);
-    })
+    });
+
+    it('should delete a value from localstorage', function () {
+        window.localStorage.setItem('__test__', string);
+        const res = sInstance.delete('__test__');
+        expect(res).toBeTruthy();
+        expect(window.localStorage.getItem('__test__')).toBeNull();
+    });
+
+    it('should clear the localstorage', function () {
+        window.localStorage.setItem('__test__', string);
+        window.localStorage.setItem('__test2__', string);
+        sInstance.clear();
+        expect(window.localStorage.getItem('__test__')).toBeNull();
+        expect(window.localStorage.getItem('__test2__')).toBeNull();
+    });
 });

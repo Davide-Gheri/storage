@@ -37,5 +37,20 @@ describe('Storage with Sessionstorage', function () {
         const res = sInstance.get('__test__');
         expect(typeof res).toBe('object');
         expect(res).toEqual(obj);
-    })
+    });
+
+    it('should delete a value from sessionstorage', function () {
+        window.sessionStorage.setItem('__test__', string);
+        const res = sInstance.delete('__test__');
+        expect(res).toBeTruthy();
+        expect(window.sessionStorage.getItem('__test__')).toBeNull();
+    });
+
+    it('should clear the sessionstorage', function () {
+        window.sessionStorage.setItem('__test__', string);
+        window.sessionStorage.setItem('__test2__', string);
+        sInstance.clear();
+        expect(window.sessionStorage.getItem('__test__')).toBeNull();
+        expect(window.sessionStorage.getItem('__test2__')).toBeNull();
+    });
 });
