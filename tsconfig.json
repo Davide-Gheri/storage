@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["dom", "es5", "es6", "scripthost"],
+    "sourceMap": true,
+    "outDir": "./dist/lib",
+    "strict": true,
+    "noImplicitAny": false
+  }
+}
