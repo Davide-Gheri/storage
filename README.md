@@ -19,10 +19,18 @@ Available adapters:
 
 ##### Methods
 
-_set(key, value, options? (cookie only)): boolean_
+__set(key, value, options? (cookie only)): boolean__
 
-_get(key, default): any_
+_set the given value in the storage by the given key, options: for cookie storage you can pass storing options that overwrites the defaults_
 
-_delete(key): boolean_
+__get(key, default?): any__
 
-_clear(): void_
+_get the value from the storage by the given key, optional default value is returned if nothing is found_
+
+__delete(key): boolean__
+
+_remove the value from the storage by the given key_
+
+__clear(): void__
+
+_remove all values from the storage_

@@ -6,9 +6,11 @@ interface CookieOptions {
 }
 
 export class Cookiestorage implements AdapterInterface {
-    private defaults = {
-        path: '/'
-    };
+    private defaults: any;
+    
+    constructor(options = {path: '/'}) {
+        this.defaults = options;
+    }
 
     private setAttributes(options?: CookieOptions): CookieOptions {
         const attributes = Object.assign(this.defaults, options);
