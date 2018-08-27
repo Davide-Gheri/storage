@@ -3,7 +3,7 @@ node_modules/
 coverage/
 .DS_*
 npm-debug.log
-
+*-lock.json
 *.js
 *.map
 *.d.ts
