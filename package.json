@@ -1,5 +1,5 @@
 {
-  "name": "storage",
+  "name": "@davidegheri/storage",
   "version": "1.0.1",
   "description": "small browser storage API library",
   "main": "dist/bundle.js",
