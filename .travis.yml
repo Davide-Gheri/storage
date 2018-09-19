@@ -7,9 +7,9 @@ branches:
   only:
   - master
 
-install:
-- yarn install
+before_script:
+  - yarn install
+  - yarn run build
 
 script:
-- yarn run build
-- yarn run test:coveralls
+  - yarn run test:coveralls
