@@ -8,8 +8,9 @@ branches:
   - master
 
 before_script:
-  - yarn install
-  - yarn run build
+  - npm install -g typescript tsc
+  - npm install
+  - npm run build
 
 script:
-  - yarn run test:coveralls
+  - npm run test:coveralls
