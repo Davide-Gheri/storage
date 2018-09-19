@@ -10,7 +10,8 @@
     "build": "tsc --project .",
     "lint": "tslint --project . --fix",
     "test": "jest",
-    "test:coveralls": "npm run test -- --coverageReporters=text-lcov | coveralls",
+    "test:coveralls": "npm run test -- --coverage",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
     "preversion": "npm run lint && npm run test",
     "version": "npm run build"
   },
