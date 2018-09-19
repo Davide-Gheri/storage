@@ -1,15 +1,18 @@
 {
   "name": "@davidegheri/storage",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "small browser storage API library",
-  "main": "dist/bundle.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "tsc": "tsc",
     "tslint": "tslint",
-    "start": "webpack-dev-server",
-    "dev": "webpack",
-    "build": "webpack --config webpack.config.prod.js",
-    "test": "./node_modules/karma/bin/karma start karma.config.js"
+    "build": "tsc",
+    "lint": "tslint --project . --fix",
+    "test": "jest",
+    "test:coveralls": "npm run test -- --coverageReporters=text-lcov | coveralls",
+    "preversion": "npm run lint && npm run test",
+    "version": "npm run build"
   },
   "author": {
     "name": "Davide Gheri",
@@ -22,29 +25,32 @@
   "license": "MIT",
   "devDependencies": {
     "@types/ejs": "^2.6.0",
-    "@types/jasmine": "^2.8.8",
-    "@types/karma": "^1.7.5",
     "@types/node": "^10.5.3",
-    "clean-webpack-plugin": "^0.1.19",
     "coveralls": "^3.0.2",
-    "html-webpack-plugin": "^3.2.0",
-    "jasmine": "^3.1.0",
-    "jasmine-core": "^3.1.0",
-    "karma": "^2.0.5",
-    "karma-chrome-launcher": "^2.2.0",
-    "karma-coverage": "^1.1.2",
-    "karma-coveralls": "^2.0.0",
-    "karma-jasmine": "^1.1.2",
-    "karma-phantomjs-launcher": "^1.0.4",
-    "karma-typescript": "^3.0.13",
-    "phantomjs-polyfill-object-assign": "0.0.2",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.1.4",
     "ts-loader": "^4.4.2",
     "tslint": "^5.11.0",
     "tslint-config-airbnb": "^5.9.2",
-    "typescript": "^2.9.2",
-    "uglifyjs-webpack-plugin": "^1.2.7",
-    "webpack": "^4.16.2",
-    "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.5"
+    "typescript": "^2.9.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(js|ts)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.ts"
+    ],
+    "coverageReporters": ["lcov", "text", "text-summary"]
   }
 }
