@@ -1,6 +1,6 @@
 {
   "name": "@davidegheri/storage",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "small browser storage API library",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -53,6 +53,10 @@
     "collectCoverageFrom": [
       "src/**/*.ts"
     ],
-    "coverageReporters": ["lcov", "text", "text-summary"]
+    "coverageReporters": [
+      "lcov",
+      "text",
+      "text-summary"
+    ]
   }
 }
