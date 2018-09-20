@@ -19,7 +19,6 @@ Available adapters:
  - localstorage : Use the window.localstorage
  - sessionstorage : Use the window.sessionstorage
  - cookie : Use the document.cookie string
- - objectstorage : Use a js Object
 
 
 ##### Methods
