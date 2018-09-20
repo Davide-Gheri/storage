@@ -1,5 +1,5 @@
 import { Storage } from '../../index';
-import { ObjectStorage } from './Objectstorage';
+import { Objectstorage } from './Objectstorage';
 
 const string = 'value';
 const obj = {test: '__test__', num: 123};
@@ -7,11 +7,11 @@ const obj = {test: '__test__', num: 123};
 describe('Storage with Objectstorage', function () {
     let sInstance;
     beforeEach(function() {
-        sInstance = new Storage(new ObjectStorage());
+        sInstance = new Storage(new Objectstorage());
     });
 
     it('Adapter shoud be ObjectStorage', function () {
-        expect(sInstance.adapter instanceof ObjectStorage).toBeTruthy();
+        expect(sInstance.adapter instanceof Objectstorage).toBeTruthy();
     });
 
     it('should set and get a value to a javascript Object', function () {
@@ -19,7 +19,7 @@ describe('Storage with Objectstorage', function () {
         const res = sInstance.get('__test__', string);
         expect(res).toEqual(string);
     });
-    
+
     it('if no key provided, it should get the entire Object storage', function () {
         sInstance.set('key1', string);
         sInstance.set('key2', obj);
