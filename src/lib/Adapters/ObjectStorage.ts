@@ -1,6 +1,6 @@
 import { AdapterInterface } from '../AdapterInterface';
 
-export class ObjectStorage implements AdapterInterface {
+export class Objectstorage implements AdapterInterface {
   private state: {[key: string]: any} = {};
 
   get(key: string, def: any = null): any {
