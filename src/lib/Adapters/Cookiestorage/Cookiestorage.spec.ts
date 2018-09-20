@@ -1,15 +1,15 @@
-import { Storage } from '../../index';
-import { Cookiestorage } from './Cookiestorage';
+import { Storage } from '../../../index';
+import { Cookiestorage } from './index';
 
 const string = 'value';
 const obj = {test: '__test__', num: 123};
 
 function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
-        var c = ca[i];
+    let name = cname + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const ca = decodedCookie.split(';');
+    for(const i = 0; i <ca.length; i++) {
+        let c = ca[i];
         while (c.charAt(0) == ' ') {
             c = c.substring(1);
         }

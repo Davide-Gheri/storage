@@ -1,5 +1,5 @@
-import { Storage } from '../../index';
-import { Localstorage } from './Localstorage';
+import { Storage } from '../../../index';
+import { Localstorage } from './index';
 
 const string = 'value';
 const obj = {test: '__test__', num: 123};
