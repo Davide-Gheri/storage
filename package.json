@@ -13,7 +13,8 @@
     "test:coveralls": "npm run test -- --coverage",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "preversion": "npm run lint && npm run test",
-    "version": "npm run build"
+    "version": "npm run build",
+    "postversion": "git push --follow-tags"
   },
   "author": {
     "name": "Davide Gheri",
