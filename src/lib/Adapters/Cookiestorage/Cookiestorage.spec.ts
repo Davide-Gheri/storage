@@ -1,5 +1,5 @@
-import { Storage } from '../../index';
-import { Cookiestorage } from './Cookiestorage';
+import { Storage } from '../../../index';
+import { Cookiestorage } from './index';
 
 const string = 'value';
 const obj = {test: '__test__', num: 123};

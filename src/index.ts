@@ -5,20 +5,11 @@ interface StorageOptions {
   adapter: string;
 }
 
-/**
- * @ngdoc object
- * @name Storage
- *
- * @description
- * Storage is the library to save and get data in different ways.
- *
- */
 export class Storage {
   private readonly defaults = {
     localstorage: Localstorage,
     sessionstorage: Sessionstorage,
     cookie: Cookiestorage,
-    // object: Objectstorage,
   };
 
   private adapter: AdapterInterface = new Localstorage();

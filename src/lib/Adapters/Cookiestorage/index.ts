@@ -1,5 +1,5 @@
-import { AdapterInterface } from '../AdapterInterface';
-import { decode, tryParse } from '../utils';
+import { AdapterInterface } from '../../AdapterInterface';
+import { decode, tryParse } from '../../utils';
 
 interface CookieOptions {
   [key: string]: any;

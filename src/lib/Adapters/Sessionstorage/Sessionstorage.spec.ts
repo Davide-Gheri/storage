@@ -1,5 +1,5 @@
-import { Storage } from '../../index';
-import { Sessionstorage } from './Sessionstorage';
+import { Storage } from '../../../index';
+import { Sessionstorage } from './index';
 
 const string = 'value';
 const obj = {test: '__test__', num: 123};

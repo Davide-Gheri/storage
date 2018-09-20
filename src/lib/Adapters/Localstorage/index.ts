@@ -1,5 +1,5 @@
-import { AdapterInterface } from '../AdapterInterface';
-import { tryParse } from '../utils';
+import { AdapterInterface } from '../../AdapterInterface';
+import { tryParse } from '../../utils';
 
 export class Localstorage implements AdapterInterface{
   get(key: string, def: any = null): any {
