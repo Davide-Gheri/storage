@@ -1,4 +1,4 @@
-import { AdapterInterface } from '../../AdapterInterface';
+import { AdapterInterface } from '../AdapterInterface';
 import { decode, tryParse } from '../../utils';
 
 interface CookieOptions {
@@ -15,7 +15,7 @@ export class Cookiestorage implements AdapterInterface {
   private setAttributes(options?: CookieOptions): CookieOptions {
     const attributes = Object.assign(this.defaults, options);
     if (typeof attributes.expires === 'number') {
-      attributes.expires = new Date(new Date().getTime() * 1 + attributes.expires * 864e+5);
+      attributes.expires = new Date(new Date().getTime() * 1 + attributes.expires * 864e5);
     }
     attributes.expires = attributes.expires ? attributes.expires.toUTCString() : '';
     return attributes;
@@ -58,12 +58,11 @@ export class Cookiestorage implements AdapterInterface {
       }
     } catch (e) {}
 
-    value = encodeURIComponent(String(value))
-                .replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g, decodeURIComponent);
+    value = encodeURIComponent(String(value)).replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g, decodeURIComponent);
 
     key = encodeURIComponent(String(key))
-            .replace(/%(23|24|26|2B|5E|60|7C)/g, decodeURIComponent)
-            .replace(/[\(\)]/g, escape);
+      .replace(/%(23|24|26|2B|5E|60|7C)/g, decodeURIComponent)
+      .replace(/[\(\)]/g, escape);
     let stringifiedAttributes = '';
     for (const attributeName in attributes) {
       if (!attributes[attributeName]) {
@@ -76,7 +75,7 @@ export class Cookiestorage implements AdapterInterface {
       stringifiedAttributes += '=' + attributes[attributeName].split(';')[0];
     }
 
-    return Boolean(document.cookie = key + '=' + value + stringifiedAttributes);
+    return Boolean((document.cookie = key + '=' + value + stringifiedAttributes));
   }
   /* tslint:enable */
 
