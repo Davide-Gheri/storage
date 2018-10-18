@@ -16,7 +16,7 @@
     "test:coverage": "npm run test -- --coverage",
     "test:watch": "npm run test:coverage -- --watchAll",
     "test:open": "npm run test:coverage && open coverage/lcov-report/index.html",
-    "test:coveralls": "cat ./coverage/lcov.info | coveralls",
+    "test:coveralls": "npm run test:coverage cat ./coverage/lcov.info | coveralls",
     "preversion": "npm run lint && npm run test",
     "version": "npm run build",
     "postversion": "git push --follow-tags"
@@ -43,10 +43,10 @@
     "jest": "^23.6.0",
     "rollup-plugin-typescript": "^1.0.0",
     "ts-jest": "^23.1.4",
-    "ts-loader": "^4.4.2",
+    "ts-loader": "^5.2.2",
     "tslint": "^5.11.0",
     "tslint-config-airbnb": "^5.9.2",
-    "typescript": "^2.9.2"
+    "typescript": "^3.1.3"
   },
   "jest": {
     "transform": {

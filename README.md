@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/Davide-Gheri/storage.svg?branch=master)](https://travis-ci.org/Davide-Gheri/storage)
 [![Coverage Status](https://coveralls.io/repos/github/Davide-Gheri/storage/badge.svg)](https://coveralls.io/github/Davide-Gheri/storage)
 [![npm version](https://badge.fury.io/js/%40davidegheri%2Fstorage.svg)](https://badge.fury.io/js/%40davidegheri%2Fstorage)
-[![GitHub version](https://badge.fury.io/gh/Davide-Gheri%2Fstorage.svg)](https://badge.fury.io/gh/Davide-Gheri%2Fstorage)
+[![GitHub version](https://badge.fury.io/gh/Davide-Gheri%2Fstorage.svg)](https://badge.fury.io/gh/Davide-Gheri%2Fstorage) [![Greenkeeper badge](https://badges.greenkeeper.io/Davide-Gheri/storage.svg)](https://greenkeeper.io/)
 
 ### Small browser storage API library
 
