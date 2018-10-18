@@ -1,7 +1,7 @@
-import { AdapterInterface } from '../../AdapterInterface';
+import { AdapterInterface } from '../AdapterInterface';
 import { tryParse } from '../../utils';
 
-export class Sessionstorage implements AdapterInterface{
+export class Sessionstorage implements AdapterInterface {
   get(key: string, def: any = null): any {
     return tryParse(sessionStorage.getItem(key)) || def;
   }

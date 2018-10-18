@@ -1,4 +1,3 @@
-
 export interface AdapterInterface {
   get(key: string, def?: any): any;
 

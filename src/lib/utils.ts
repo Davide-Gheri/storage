@@ -1,4 +1,3 @@
-
 export function tryParse(value) {
   try {
     return JSON.parse(value);

@@ -6,12 +6,13 @@ node_js:
 branches:
   only:
   - master
+  - /^greenkeeper/.*$/
 
-before_script:
-- yarn global add typescript
-- tsc -v
-- yarn install
-- yarn run build
+install:
+  - yarn global add typescript
+  - yarn install
 
 script:
-- yarn run test:coveralls
+  - yarn run lint
+  - yarn run build
+  - yarn run test:coveralls

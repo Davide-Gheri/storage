@@ -1,15 +1,25 @@
-import {  AdapterInterface } from './lib/AdapterInterface';
-import { Cookiestorage, Localstorage, Sessionstorage } from './lib/Adapters';
+import { Cookiestorage, Localstorage, Sessionstorage, Objectstorage, AdapterInterface } from './lib/Adapters';
 
-interface StorageOptions {
+export * from './lib/utils';
+export * from './lib/Adapters';
+
+export interface StorageOptions {
   adapter: string;
 }
 
+export interface StorageDefaults {
+  localstorage: typeof Localstorage;
+  sessionstorage: typeof Sessionstorage;
+  cookie: typeof Cookiestorage;
+  object: typeof Objectstorage;
+}
+
 export class Storage {
-  private readonly defaults = {
+  private readonly defaults: StorageDefaults = {
     localstorage: Localstorage,
     sessionstorage: Sessionstorage,
     cookie: Cookiestorage,
+    object: Objectstorage,
   };
 
   private adapter: AdapterInterface = new Localstorage();
@@ -36,7 +46,7 @@ export class Storage {
   }
 
   private resolveAdapter(options?: StorageOptions): AdapterInterface {
-    return options ? this.useAdapter(options.adapter) || this.adapter : this.adapter;
+    return options ? this.useAdapter(options.adapter) : this.adapter;
   }
 
   public get(key: string, def?: any, options?: StorageOptions): any {
