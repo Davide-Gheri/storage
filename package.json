@@ -38,7 +38,7 @@
     "@types/ejs": "^2.6.0",
     "@types/jest": "^23.3.5",
     "@types/node": "^10.5.3",
-    "bili": "^3.1.2",
+    "bili": "^4.3.0",
     "coveralls": "^3.0.2",
     "jest": "^23.6.0",
     "rollup-plugin-typescript": "^1.0.0",
