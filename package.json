@@ -38,7 +38,7 @@
     "@types/ejs": "^2.6.0",
     "@types/node": "^11.9.0",
     "@types/jest": "^24.0.0",
-    "bili": "^3.1.2",
+    "bili": "^4.3.0",
     "coveralls": "^3.0.2",
     "jest": "^23.6.0",
     "rollup-plugin-typescript": "^1.0.0",
@@ -69,5 +69,8 @@
       "text",
       "text-summary"
     ]
+  },
+  "dependencies": {
+    "rollup-plugin-typescript2": "^0.21.2"
   }
 }
