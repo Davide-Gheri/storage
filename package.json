@@ -36,8 +36,8 @@
   "license": "MIT",
   "devDependencies": {
     "@types/ejs": "^2.6.0",
-    "@types/jest": "^23.3.5",
     "@types/node": "^11.9.0",
+    "@types/jest": "^24.0.0",
     "bili": "^3.1.2",
     "coveralls": "^3.0.2",
     "jest": "^23.6.0",
