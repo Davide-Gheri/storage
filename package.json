@@ -71,6 +71,6 @@
     ]
   },
   "dependencies": {
-    "rollup-plugin-typescript2": "^0.21.2"
+    "rollup-plugin-typescript2": "^0.22.0"
   }
 }
