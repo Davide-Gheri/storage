@@ -35,7 +35,7 @@
   "homepage": "https://github.com/Davide-Gheri/storage#readme",
   "license": "MIT",
   "devDependencies": {
-    "@types/ejs": "^3.0.0",
+    "@types/ejs": "^3.0.3",
     "@types/node": "^12.7.2",
     "@types/jest": "^24.0.0",
     "bili": "^4.3.0",
